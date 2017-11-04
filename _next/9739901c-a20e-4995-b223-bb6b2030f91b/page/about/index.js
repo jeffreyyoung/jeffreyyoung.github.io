@@ -1,0 +1,6 @@
+
+          window.__NEXT_REGISTER_PAGE('/about', function() {
+            var comp = module.exports=webpackJsonp([8],{385:function(e,t,u){e.exports=u(386)},386:function(e,t,u){"use strict";function f(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var n=u(1),a=f(n),l=u(61),d=f(l),r=u(62),o=f(r);t.default=(0,d.default)(function(e){return a.default.createElement(o.default,e,a.default.createElement("h1",null,"Hiiiiaasfffdfsdfasdf"))})}},[385]);
+            return { page: comp.default }
+          })
+        
