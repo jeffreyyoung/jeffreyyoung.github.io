@@ -8,7 +8,7 @@
     "build": "npm run generate && next build",
     "start": "NODE_ENV=production node server.js",
     "generate": "node ./generateStaticJsonFiles/generateStaticJsonFiles.js",
-    "export": "serve . & npm run build && next export",
+    "export": "npm run build && next export",
     "deploy": "npm run export && gh-pages -d out -b master"
   },
   "repository": {
