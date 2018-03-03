@@ -3,11 +3,8 @@ import withData from './../hocs/withData';
 import withLayout from './../hocs/withLayout';
 import Link from 'next/link';
 
-export default withData(w({projects, posts}) => (
-  <div className='measure center f4 f3'>
-    <Head>
-      <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
-    </Head>
+export default withData(withLayout(({projects, posts}) => (
+  <div>
     <section className='bg-white pt3 mr3 ml3 flex flex-column justify-between '>
       <div></div>
       <div>
@@ -29,16 +26,13 @@ export default withData(w({projects, posts}) => (
       <h2 className='f2 fw3'>Projects</h2>
       <ul>
         {projects.map(p => (<li><Link href={p.href} as={p.url}><a>{p.title}</a></Link></li>))}
-        <li>PlenaData Home Page Animation ~ Jan 2018</li>
-        <li>Whistic Home Page ~ Nov 2017</li>
       </ul>
     </section>
     <section className='pt3 mr3 ml3'>
       <h2 className='f2 fw3'>Blog</h2>
       <ul>
         {posts.map(p => (<li><Link href={p.href} as={p.url}><a>{p.title}</a></Link></li>))}
-        <li>Javascript Alternative to Animate Motion ~ Jan 2018</li>
       </ul>
     </section>
   </div>
-));
+)));
