@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "serve . & next",
+    "dev": "node server",
     "build": "npm run generate && next build",
-    "start": "serve . & next start",
+    "start": "NODE_ENV=production node server.js",
     "generate": "node ./generateStaticJsonFiles/generateStaticJsonFiles.js",
     "export": "serve . & npm run build && next export",
     "deploy": "npm run export && gh-pages -d out -b master"
@@ -31,12 +31,14 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
+    "express": "^4.16.2",
     "front-matter": "^2.3.0",
     "gh-pages": "^1.1.0",
     "highlight.js": "^9.12.0",
     "lodash": "^4.17.5",
     "lqip": "^2.0.2",
     "markdown-it": "^8.4.1",
+    "serve": "^6.5.1",
     "write-json-files": "^1.0.1"
   }
 }

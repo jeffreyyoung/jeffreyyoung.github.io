@@ -35,7 +35,6 @@ async function parseMdFiles() {
   console.log(containerFolderPath)
 	let filePaths = await getFilePaths();
 	let [files, images] = await Promise.all([readFilesToString(filePaths), lqipifyAllImages()]);
-	console.log('FILES', files, images)
 	
 	return files
 		.map(f => markdownToHtml(f, {images})) 
@@ -48,6 +47,7 @@ async function parseMdFiles() {
 				path: relativePath,
 			}
 		})
+		.filter(({meta}) => !meta.exclude)
 }
 
 module.exports = async function() {

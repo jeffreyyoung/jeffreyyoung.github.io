@@ -1,8 +1,6 @@
 const parseMdFiles = require('./parseMdFiles');
 const writeJsonFiles = require('write-json-files');
 
-console.log('HEREREE!!!!!!', parseMdFiles);
-
 async function getFiles() {
 	const mdFiles = await parseMdFiles();
 	const blogFiles = mdFiles
@@ -80,6 +78,7 @@ async function getFiles() {
 							imagePlaceholder: m.meta.imagePlaceholder,
 							imageDescription: m.meta.imageDescription,
 							description: m.meta.description,
+							competition: m.meta.competition,
 							url: m.path.replace('.md',''),
               href: `/projects?id=${id}`
 						}
@@ -137,11 +136,15 @@ async function getFiles() {
 }
 
 function main() {
-	console.log('GET FILES!!!');
 	writeJsonFiles.set(getFiles, {
 		pathPrefix: __dirname +'/../static/data/',
 		pathSuffix: '.json'
 	});
 }
-main();
+
+
+if (require.main === module) {
+    main();
+}
+
 module.exports = main;

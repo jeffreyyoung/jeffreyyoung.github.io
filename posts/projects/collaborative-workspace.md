@@ -1,10 +1,11 @@
 ---
-title: Adobe Garage Week Hackathon Finalist
+title: Adobe Hackathon Finalist
 image: /static/images/collaboration-demo.gif
 imageDescription: Demo of Analysis Workspace with Collaboration
 category: projects
 order: 3
 description: What I built to be a finalist of a Adobe Analytics Hackathon
+competition: true
 ---
 
 Last December Adobe had a week long hackathon where any engineer could build anything they wanted as long as whatever they built related to Adobe in some way.

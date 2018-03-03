@@ -20,17 +20,33 @@ function getDataUrl(pathName, id) {
   return url;
 }
 
+const isBrowser = (typeof window !== 'undefined');
+
 export default function withData(component) {
   component.getInitialProps = async ({ query, pathname }) => {
     const url = getDataUrl(pathname, query.id);
-    let host = 'http://localhost:5000';
-    if (typeof window !== 'undefined') {
-      host = window.location.origin;
-      debugger;
+    if (isBrowser) {
+      const host = window.location.origin;
+      const res = await fetch(host + url);
+      const json = await res.json();
+      return json;
+    } else {
+      //hackery to load files via fs if on server
+      const path = eval("require('path')");
+      const fs = eval("require('fs')");
+      const util = eval("require('util')");
+      let dirname = eval('path.dirname(require.main.filename)');
+      const splitOn = 'jeffreyyoung.github.io';
+      dirname = dirname.substr(
+        0,
+        dirname.indexOf(splitOn) + splitOn.length
+      );
+      
+      const readFile = util.promisify(fs.readFile);
+      return JSON.parse(await readFile(
+        path.join(dirname, url)
+      ))
     }
-    const res = await fetch(host + url);
-    const json = await res.json();
-    return json;
   }
   return component;
 }

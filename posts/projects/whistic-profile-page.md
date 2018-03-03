@@ -4,7 +4,8 @@ image: /static/images/whistic-profile.png
 imageDescription: Whistic Website
 category: projects
 order: 5
-description: After I worked on their home page, Whistic came to me looking to design and build another page of their application. 
+description: After I worked on their home page, Whistic came to me looking to design and build another page of their application.
+exclude: true
 ---
 
 After my friend and I worked on their home page, Whistic came back looking to design and build another page of their application.

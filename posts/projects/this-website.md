@@ -5,6 +5,7 @@ imageDescription: Screen shot of the current website
 category: projects
 order: 4
 description: I built this hoping people would hire me for freelance dev
+exclude: true
 ---
 
 Wanting to get into freelance web development, I built the website you are looking at!

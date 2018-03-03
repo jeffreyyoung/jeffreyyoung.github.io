@@ -23,9 +23,15 @@ export default withData(withLayout(({projects, posts}) => (
       </ul>
     </section>
     <section className='pt3 mr3 ml3'>
+      <h2 className='f2 fw3'>Awards 🥇</h2>
+      <ul className='f4 fw3'>
+        {projects.filter(({competition}) => competition).map(p => (<li><Link href={p.href} as={p.url}><a>{p.title}</a></Link></li>))}
+      </ul>
+    </section>
+    <section className='pt3 mr3 ml3'>
       <h2 className='f2 fw3'>Projects 🛠</h2>
       <ul className='f4 fw3'>
-        {projects.map(p => (<li><Link href={p.href} as={p.url}><a>{p.title}</a></Link></li>))}
+        {projects.filter(({competition}) => !competition).map(p => (<li><Link href={p.href} as={p.url}><a>{p.title}</a></Link></li>))}
       </ul>
     </section>
     <section className='pt3 mr3 ml3'>
