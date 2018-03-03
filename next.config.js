@@ -1,8 +1,9 @@
+let mdPages = require('./static/data/exportPathMap');
+
 // next.config.js
 module.exports = {
   exportPathMap: function() {
-    return {
-      '/': { page: '/' }
-    }
+    mdPages['/'] = { page: '/' };
+    return mdPages;
   }
 }
