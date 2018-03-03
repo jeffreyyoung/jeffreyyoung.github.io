@@ -3,7 +3,7 @@ import Head from 'next/head'
 export default function withLayout(ComposedComponent) {
   return props => (
     <div className='sans-serif measure center f4 f3'>
-      <style>{`
+      <style jsx global>{`
         .md-wrapper * {
             font-weight: 300;
         }

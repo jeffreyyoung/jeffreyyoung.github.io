@@ -123,7 +123,7 @@ async function getFiles() {
           .filter(m => m.path.startsWith('/blog') || m.path.startsWith('/projects'))
           .forEach(m => {
             json[m.path.replace('.md','')] = {
-              page: m.path.startsWith('/blog') ? 'blog' : 'projects',
+              page: m.path.startsWith('/blog') ? '/blog' : '/projects',
               query: {id: m.path.replace('.md', '').split('/').pop()}
             }
           });
