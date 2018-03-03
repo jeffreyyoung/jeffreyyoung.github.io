@@ -10,3 +10,5 @@ description: How a classmate and I got second place in a machine learning compet
 A classmate and I developed an app that FamilyTree could use to view where the majority of their census records are based.
 
 In the end of the class we won a $500 gift certificate to Microsoft Store for placing second in the competition.
+
+![Demo of Collaborative Workspace](/static/images/family-search)
