@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node server",
+    "dev": "nodemon -w server.js server",
     "build": "npm run generate && next build",
     "start": "NODE_ENV=production node server.js",
     "generate": "node ./generateStaticJsonFiles/generateStaticJsonFiles.js",
@@ -38,6 +38,7 @@
     "lodash": "^4.17.5",
     "lqip": "^2.0.2",
     "markdown-it": "^8.4.1",
+    "nodemon": "^1.17.1",
     "serve": "^6.5.1",
     "write-json-files": "^1.0.1"
   }

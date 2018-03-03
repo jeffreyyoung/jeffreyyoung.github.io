@@ -17,8 +17,8 @@ app.prepare()
   server.use('/static', express.static(path.join(__dirname, 'static')))
 
   server.get('/projects/:id', (req, res) => {
-    return app.render(req, res, '/posts', { id: req.params.id })
-  })
+    return app.render(req, res, '/projects', { id: req.params.id })
+  });
   server.get('/blog/:id', (req, res) => {
     return app.render(req, res, '/posts', { id: req.params.id })
   })
