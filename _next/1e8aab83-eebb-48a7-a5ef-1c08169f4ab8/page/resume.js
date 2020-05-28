@@ -1,1 +1,0 @@
-module.exports=__NEXT_REGISTER_PAGE("/resume",function(){var e=webpackJsonp([3],{229:function(e,t,r){e.exports=r(230)},230:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:true});var u=r(4);var n=r.n(u);t["default"]=function(){return n.a.createElement("h1",null,"resume")}}},[229]);return{page:e.default}});
